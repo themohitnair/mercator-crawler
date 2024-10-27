@@ -1,8 +1,3 @@
-```
-npm install
-npm run dev
-```
+# mercator-scraper
 
-```
-npm run deploy
-```
+[Mercator](https://github.com/theymohitnair/mercator-interface)'s web scraping microservice.
