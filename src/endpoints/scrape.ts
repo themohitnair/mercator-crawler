@@ -7,13 +7,7 @@ export class Scrape extends OpenAPIRoute {
         tags: ["Routes"],
         summary: "Scrapes a given website (query param URL)",
         request: {
-            body: {
-                content: {
-                    "application/json": {
-                        schema: URLReq,
-                    },
-                },
-            },
+            query: URLReq
         },
         responses: {
             "200": {
@@ -36,7 +30,7 @@ export class Scrape extends OpenAPIRoute {
     async handle(c) {
         const data = await this.getValidatedData<typeof this.schema>();
 
-        const url = data.body.url;
+        const url = data.query.url
 
         try {
             const scrapeResult = await this.scrapeWebsite(url);
