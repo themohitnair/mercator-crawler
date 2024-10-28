@@ -1,7 +1,7 @@
 import { OpenAPIRoute } from "chanfana";
 import { ScrapeRes, URLReq } from "../types";
 
-export class Scrape extends OpenAPIRoute {
+export class Crawl extends OpenAPIRoute {
     schema = {
         tags: ["Routes"],
         summary: "Scrapes a given website (query param URL)",

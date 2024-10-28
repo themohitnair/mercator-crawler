@@ -1,6 +1,6 @@
 import { fromHono } from "chanfana";
 import { Hono } from "hono";
-import { Scrape } from "endpoints/scrape";
+import { Crawl } from "endpoints/crawl";
 
 // Start a Hono app
 const app = new Hono();
@@ -11,7 +11,7 @@ const openapi = fromHono(app, {
 });
 
 // Register OpenAPI endpoints
-openapi.get("/api/scrape", Scrape)
+openapi.get("/api/crawl", Crawl)
 
 // Export the Hono app
 export default app;
