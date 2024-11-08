@@ -1,5 +1,5 @@
-import { OpenAPIRoute } from "chanfana";
-import { ScrapeRes, URLReq } from "../types";
+import { OpenAPIRoute } from "chanfana"
+import { ScrapeRes, URLReq } from "../types"
 
 export class Crawl extends OpenAPIRoute {
     schema = {
@@ -24,7 +24,7 @@ export class Crawl extends OpenAPIRoute {
                 description: "Internal server error",
             },
         },
-    };
+    }
 
     async handle(c) {
         const data = await this.getValidatedData<typeof this.schema>();
@@ -38,13 +38,13 @@ export class Crawl extends OpenAPIRoute {
                 url,
                 success: true,
                 // data: scrapeResult,
-            });
+            })
         } catch (error) {
             console.error("Error scraping website:", error);
             return c.status(500).json({
                 success: false,
                 message: "Failed to scrape the website.",
-            });
+            })
         }
     }
 }
